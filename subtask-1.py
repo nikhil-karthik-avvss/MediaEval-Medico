@@ -88,13 +88,13 @@ def main():
     # --------------------
     # 3. Training setup
     # --------------------
-    '''training_args = TrainingArguments(
+    training_args = TrainingArguments(
         output_dir="./blip-kvasir-x1",
         per_device_train_batch_size=16,
         per_device_eval_batch_size=16,
         num_train_epochs=1,
         learning_rate=5e-5,
-        eval_strategy="steps",  # ✅ was `eval_strategy` (typo)
+        eval_strategy="steps",
         eval_steps=2000,
         save_strategy="steps",
         save_steps=2000,
@@ -103,8 +103,9 @@ def main():
         dataloader_num_workers=4,
         save_total_limit=2,
         report_to="none"
-    )'''
+    )
 
+    '''
     training_args = TrainingArguments(
         output_dir="./blip-kvasir-x1",
         per_device_train_batch_size=8,
@@ -124,6 +125,7 @@ def main():
         save_total_limit=2,
         report_to="none"
     )
+    '''
 
 
     trainer = Trainer(
